@@ -12,5 +12,5 @@
 
 ### Machining_Process별로 X_ActualVelocty값의 평균의 차이가 있는지 분산분석 (다중비교)로 검정해보세요.
 
-### 전체 데이터 기반, Kmeans 클러스터링을 적절히 한후, cluster_centers의 값을 sqlite에 저장하세요.
+### 전체 데이터 기반, Kmeans 클러스터링을 적절히 한후, cluster_centers의 값을 확인하세요.  (지난 과정에서 배우신 경우에는) cluster_centers_값을 sqlite에 저장하세요.
 
