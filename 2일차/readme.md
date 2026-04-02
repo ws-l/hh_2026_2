@@ -5,3 +5,4 @@
 ### 2. pm_train.csv에서 s1~s21에 대해 평균보다 크면 True, 아니면 False로 하여 패턴 발견을 수행해보세요.
 ### 3. HH_ML_2026_2_3.py를 streamlit으로 실행한 결과를 캡쳐해서 제출하세요
 ### 4. HH_ML_2026_2_4.py를 streamlit으로 실행한 결과를 캡쳐해서 제출하세요
+#### streamlit run 파일명.py
