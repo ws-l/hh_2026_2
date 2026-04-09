@@ -1,0 +1,14 @@
+from PIL import Image
+import numpy as np
+images = []
+labels = []
+folders = os.listdir("dataset") #이미지 폴더들이 있는dataset 폴더 리스트업
+for i in folders: # 각 폴더에 대해 반복
+    files = os.listdir("dataset\\"+i)  #워킹디렉토리 기준, 각 폴더의 파일리스트
+    for j in files:
+        img = Image.open("dataset\\"+i+"\\"+j) #이미지 읽기
+        img = img.convert("RGB") #RGB로 바꾸기
+        img = img.resize((32, 32)) #크기 맞추기
+        img_arr = np.asarray(img) #array로 바꾸기
+        images.append(img_arr.reshape(32*32*3) ) #1D array로 바꿔 리스트 추가
+        labels.append(i)    #라벨도 리스트 추가
