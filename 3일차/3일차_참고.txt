@@ -1,0 +1,24 @@
+#data.csv -> Pass.Fail을 y로, 나머지 X로,
+import pandas as pd
+df = pd.read_csv("satimage.csv")
+X = df.drop(columns="y")
+y = df["y"]
+#X,y를 파티셔닝-> 모형 학습은 train, score는 test로 진행해보세요.
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split( X, y)
+#SMOTE           
+#from imblearn.over_sampling import SMOTE
+#smote = SMOTE(sampling_strategy=0.3)
+#X_train_res, y_train_res = smote.fit_resample( X_train, y_train)
+#DT모형
+from sklearn.tree import DecisionTreeClassifier
+model = DecisionTreeClassifier(max_depth=10)   
+model.fit(X_train, y_train)
+model.score(X_test, y_test) #Accuracy 정확도, 정분류율
+pred = model.predict( X_test ) 
+from sklearn.metrics import classification_report
+print( classification_report( y_test , pred  ) )  
+#pkl로 저장
+import pickle
+with open("dtmodel.pkl", "wb") as f:
+    pickle.dump(model, f)    
